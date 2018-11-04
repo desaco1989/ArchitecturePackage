@@ -25,7 +25,7 @@ import java.io.File;
  * DiskCacheStrategy.RESULT 只缓存加载后的图像，即处理后最终显示时的图像
  * DiskCacheStrategy.ALL 缓存所有版本的图像（默认行为）
  * <p>
- * 圆角图片
+ * 圆角图片 .  出现OOM以及图片缓存
  * <p>
  * Glide.with(context).resumeRequests()和 Glide.with(context).pauseRequests()
  * 当列表在滑动的时候，调用pauseRequests()取消请求，滑动停止时，调用resumeRequests()恢复请求。

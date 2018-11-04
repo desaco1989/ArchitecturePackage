@@ -236,4 +236,12 @@ public class GsonParseUtils<T> {
         return prettyJsonString;
     }
 
+//    public <T> json2Bean(String json, Class<?> clazz) {
+//        return mGsonPack.fromJson(json, clazz);
+//    }
+//    public String bean2Json(Class<?> clazz) {
+//        String json = mGsonPack.toJson(clazz);
+//        return json;
+//    }
+
 }
