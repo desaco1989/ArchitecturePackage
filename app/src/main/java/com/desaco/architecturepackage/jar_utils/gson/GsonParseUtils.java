@@ -1,4 +1,4 @@
-package com.desaco.architecturepackage.jar_utils;
+package com.desaco.architecturepackage.jar_utils.gson;
 
 import android.text.TextUtils;
 
