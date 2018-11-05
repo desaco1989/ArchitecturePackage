@@ -20,6 +20,8 @@ import static com.squareup.picasso.NetworkPolicy.NO_STORE;
  * 出现OOM以及图片缓存
  * <p>
  * Android开发中加载图片时遇到的诸多问题，比如OOM，图片错位等
+ * LruCache， LinkedHashMap<String, Bitmap>双向链表来进行缓存。LRU是一种内存管理算法，是Least Recently Used的缩写。
+ * Picasso使用两级缓存模型，内存缓存及硬盘缓存。
  * <p>
  * Android-Picasso库使用详解-从入门到源码剖析- https://blog.csdn.net/ko_tin/article/details/53427631
  * Picasso最详细的使用指南- https://www.jianshu.com/p/c68a3b9ca07a
@@ -71,12 +73,20 @@ public class PicassoUtils {
 //                .into(imageView);
     }
 
-    private void clearMemory() {
-
+    //不缓存图片 clear-cache-memory-of-picasso
+    private void skipMemoryLoadImage(String url, ImageView imageView) {
+        Picasso.get().load(url).memoryPolicy(MemoryPolicy.NO_CACHE).into(imageView);
     }
 
-    private void clearSDcard() {
+    private void clearSDcard(String url, ImageView imageView) {
+        Picasso.get().load(url).memoryPolicy(MemoryPolicy.NO_CACHE).into(imageView);
 
+//        Clear.clearCache(Picasso.with(context));
+
+        Picasso.get().load(url).networkPolicy(NetworkPolicy.NO_CACHE)
+                .memoryPolicy(MemoryPolicy.NO_CACHE)
+                .placeholder(R.drawable.user).stableKey("id")
+                .into(imageView);
     }
 
     //对这张图片进行剪裁，可以使用resize方法：转换图片以适应布局大小并减少内存占用
