@@ -1,1 +1,1 @@
-include ':app', ':greendaomodule'
+include ':app', ':greendaolibrary'
