@@ -43,7 +43,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.11.0'
 
 //    //  GreenDao  https://github.com/greenrobot/greenDAO
-//    implementation 'org.greenrobot:greendao:3.1.0' // add library
+    implementation 'org.greenrobot:greendao:3.1.0' // add library
 
 //    Picasso-transformations 一个为Picasso提供多种图片变换的库；
 //    Glide-transformations   一个为Glide提供多种图片变换的库；
