@@ -1,4 +1,4 @@
-## ArchitecturePackage，App架构
+## ArchitecturePackage，App架构，源码包选择，源码分析
 
 1.第三包封装：第三方包引入及二次封装：gson butterknife glide picasso  okhttp3 greendao eventbus  leakcanary
 
